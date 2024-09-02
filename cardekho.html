@@ -27,17 +27,14 @@
               <input class="form-control form-control1 me-2" type="search" placeholder="Search" aria-label="Search">
               
             </form>
-            <div class="header_right">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle lang_btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Language
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">English</a></li>
-                      <li><a class="dropdown-item" href="#">Hindi</a></li>
-                      <li><a class="dropdown-item" href="#">Marathi</a></li>
-                    </ul>
-                  </div>
+            <!--language-->
+            <div class="header_right ">
+                <div class="dropdown" class="ui-widget" id="lang">
+                        <label for="tags"><i class="fa-solid fa-language langicon"></i></label>
+                        <input id="tags" placeholder="Language">
+                </div>
+            </div>
+
                   <!-- Button trigger modal -->
 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <i class="fa-solid fa-user"></i> Login / Register
@@ -173,24 +170,12 @@
             
           
         </div>
+        <!--city-->
         <div class="loc">
-            <li class="nav-item dropdown upperanchor"  style="list-style: none;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-location-dot"></i> Select City 
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  
-                  <!-- <li><hr class="dropdown-divider"></li> -->
-                  <li><a class="dropdown-item" href="#">challan Check</a></li>
-                  <li><a class="dropdown-item" href="#">Car Service History</a></li>
-                  <li><a class="dropdown-item" href="#">RTO Records histort</a></li>
-                  <li><a class="dropdown-item" href="#">Allianz Assistance RSA</a></li>
-                  <li><a class="dropdown-item" href="#">SmartCAr Connected Device</a></li>
-                  <li><a class="dropdown-item" href="#">Revv Car Subscription</a></li>
-                  <li><a class="dropdown-item" href="#">View All service</a></li>
-            
-                </ul>
-                </li>
+              <div  class="ui-widget locationicon">
+                <label for="cities"><i class="fa-solid fa-location-dot"></i></label>
+                <input id="cities" placeholder="select your city.">
+              </div>
         </div>
       </nav>
 
@@ -498,5 +483,27 @@
    </section>
     <script src="bootstrap.bundle.js"></script>
     <script src="car.js"></script>
+
+    <!--language-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var availableTags =[
+    "Hindi", "Bengali", "Marathi", "Gujarati", "Punjabi", "Urdu", "Odia", "Assamese", "Sindhi", "Konkani", "Maithili", "Rajasthani", "Bhojpuri", "Dogri", "Telugu", "Tamil", "Kannada", "Malayalam", "Tulu", "Kodava", "Bodo", "Manipuri (Meitei)", "Lepcha", "Mizo (Lushai)", "Khasi", "Santali", "Mundari", "Ho", "Great Andamanese", "Nicobarese", "Burushaski", "Koro", "Dakhini", "Bajjika", "Nagpuri", "Siraiki", "English", "Indian Sign Language (ISL)"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  $( function() {
+    var cities = [
+      "Agartala", "Agra", "Ahmedabad", "Ahmednagar", "Aizawl", "Ajmer", "Aligarh", "Allahabad", "Amravati", "Amritsar", "Anand", "Anantapur", "Aurangabad", "Avadi", "Bangalore", "Bareilly", "Bathinda", "Begusarai", "Belgaum", "Bellary", "Bhagalpur", "Bharatpur", "Bhatpara", "Bhavnagar", "Bhilai", "Bhiwadi", "Bhiwandi", "Bhopal", "Bhubaneswar", "Bhuj", "Bikaner", "Bilaspur", "Bokaro", "Chandigarh", "Chandrapur", "Chennai", "Coimbatore", "Cuttack", "Darbhanga", "Davanagere", "Dehradun", "Dewas", "Dhanbad", "Dharwad", "Dibrugarh", "Dindigul", "Durgapur", "Eluru", "Erode", "Faridabad", "Firozabad", "Gandhinagar", "Gangtok", "Gaya", "Ghaziabad", "Gorakhpur", "Gulbarga", "Guntur", "Gurgaon", "Guwahati", "Gwalior", "Haldia", "Haridwar", "Hisar", "Hubli-Dharwad", "Hyderabad", "Imphal", "Indore", "Itanagar", "Jabalpur", "Jaipur", "Jalandhar", "Jalgaon", "Jammu", "Jamnagar", "Jamshedpur", "Jhansi", "Jodhpur", "Junagadh", "Kadapa", "Kakinada", "Kalaburagi", "Kalyan-Dombivli", "Kamarhati", "Kanpur", "Karimnagar", "Karnal", "Kashipur", "Katihar", "Kavaratti", "Khammam", "Kochi", "Kohima", "Kolhapur", "Kolkata", "Kollam", "Korba", "Kota", "Kozhikode", "Kurnool", "Latur", "Loni", "Lucknow", "Ludhiana", "Madurai", "Malappuram", "Malegaon", "Mangalore", "Mathura", "Meerut", "Moradabad", "Mumbai", "Muzaffarpur", "Mysore", "Nagpur", "Naihati", "Nanded", "Nashik", "Navi Mumbai", "Nellore", "New Delhi", "Nizamabad", "Noida", "Pali", "Panihati", "Panipat", "Patiala", "Patna", "Pimpri-Chinchwad", "Pondicherry", "Port Blair", "Pune", "Raebareli", "Raipur", "Rajahmundry", "Rajkot", "Ranchi", "Ratlam", "Rewa", "Rohtak", "Rourkela", "Saharanpur", "Salem", "Sambalpur", "Sangli", "Satna", "Secunderabad", "Shimla", "Siliguri", "Solapur", "Sonipat", "Srinagar", "Surat", "Thane", "Thiruvananthapuram", "Tiruchirappalli", "Tirunelveli", "Tirupati", "Tiruppur", "Udaipur", "Ujjain", "Ulhasnagar", "Vadodara", "Varanasi", "Vasai-Virar", "Vijayawada", "Visakhapatnam", "Warangal", "Yamunanagar"
+    ];
+    $( "#cities" ).autocomplete({
+      source: cities
+    });
+  } );
+  </script>
 </body>
 </html>
