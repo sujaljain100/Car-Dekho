@@ -7,7 +7,7 @@
 }
 .container-fluid{
     display: flex !important;
-    justify-content: space-around !important;
+    justify-content: space-evenly !important;
 }
 .hii{
     border: .2px solid black;
@@ -45,15 +45,14 @@ left: 30px;
 }
 .header_right{
     display: flex;
+    position: relative;
+    left: 70px;
 }
 .header-2{
     display: flex;
     justify-content: start !important;
     gap: 50px;
     margin-left: 150px;
-}
-.loc{
-    margin-right: 100px;
 }
 
 .bg1{
@@ -205,6 +204,18 @@ left: 30px;
         box-shadow: 5px 5px 25px gray;
         padding-left: 20px;
 
+    }
+    #tags{
+        border:none;
+    }
+    .langicon{
+        position: relative;
+       
+    }
+    .locationicon{
+        display: flex;
+        gap: 10px;
+        margin-right: 20px;
     }
     footer ul{
         display: flex;
